@@ -1,0 +1,6 @@
+@"
+oracledb
+python-dotenv
+requests
+pandas
+"@ | Set-Content -Encoding utf8 requirements.txt
