@@ -1,0 +1,26 @@
+[
+  {
+    "teleconsulta_id": 5,
+    "paciente": "Carla Mendes",
+    "nascimento": "02/11/1978",
+    "medico": "Marcos",
+    "data_hora": "30/11/2025 10:00",
+    "diagnostico": "Paciente sem a perna.",
+    "urgencia": "media",
+    "elegivel_online": "S",
+    "status": "concluida",
+    "plano": "Orientações: Manter os treinos"
+  },
+  {
+    "teleconsulta_id": 6,
+    "paciente": "Ana Paula Silva",
+    "nascimento": "12/03/1985",
+    "medico": "Fabio",
+    "data_hora": "02/11/2025 10:00",
+    "diagnostico": "Paciente com dificuldade de locomoção",
+    "urgencia": "baixa",
+    "elegivel_online": "S",
+    "status": "agendada",
+    "plano": "Unimed"
+  }
+]

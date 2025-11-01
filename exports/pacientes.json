@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nome": "Ana Paula Silva",
+    "nascimento": "12/03/1985",
+    "telefone": "11999990001",
+    "alta": "S"
+  },
+  {
+    "id": 2,
+    "nome": "Bruno Souza",
+    "nascimento": "25/07/1990",
+    "telefone": "11999990002",
+    "alta": "N"
+  },
+  {
+    "id": 3,
+    "nome": "Carla Mendes",
+    "nascimento": "02/11/1978",
+    "telefone": "11999990003",
+    "alta": "S"
+  }
+]

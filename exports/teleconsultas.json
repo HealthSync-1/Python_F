@@ -1,0 +1,24 @@
+[
+  {
+    "id": 5,
+    "paciente_id": 3,
+    "medico": "Marcos",
+    "data_hora": "30/11/2025 10:00",
+    "diagnostico": "Paciente sem a perna.",
+    "urgencia": "media",
+    "elegivel_online": "S",
+    "status": "concluida",
+    "plano": "Orientações: Manter os treinos"
+  },
+  {
+    "id": 6,
+    "paciente_id": 1,
+    "medico": "Fabio",
+    "data_hora": "02/11/2025 10:00",
+    "diagnostico": "Paciente com dificuldade de locomoção",
+    "urgencia": "baixa",
+    "elegivel_online": "S",
+    "status": "agendada",
+    "plano": "Unimed"
+  }
+]
