@@ -1,4 +1,3 @@
-# src/external_api.py
 import requests
 
 def buscar_cep(cep: str) -> dict | None:

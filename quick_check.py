@@ -1,4 +1,3 @@
-# quick_check.py
 import os, sys, oracledb
 from dotenv import load_dotenv
 
@@ -20,7 +19,6 @@ HOST = os.getenv("HOST", "oracle.fiap.com.br")
 PORT = os.getenv("PORT", "1521")
 SID  = os.getenv("SID",  "orcl")
 
-# DSN: tenta como service_name; se a versão não aceitar, cai pra SID
 try:
     dsn = oracledb.makedsn(HOST, PORT, service_name=SID)
 except TypeError:

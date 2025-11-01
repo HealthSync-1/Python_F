@@ -1,4 +1,3 @@
-# src/seed_data.py
 from utils import get_credentials, parse_date_br, parse_datetime_br
 from connection_functions import CRUD_Connect
 
@@ -9,7 +8,6 @@ def get_or_create_paciente(c_read, c_create, conn, nome: str, nasc_str: str, tel
     """
     nasc = parse_date_br(nasc_str)
 
-    # 1) Tenta achar existente (compara TRUNC(data) para evitar problemas de hora)
     c_read.execute(
         "SELECT id FROM hs_paciente "
         "WHERE nome = :n AND telefone = :t AND TRUNC(nascimento) = TRUNC(:d)",
@@ -20,7 +18,6 @@ def get_or_create_paciente(c_read, c_create, conn, nome: str, nasc_str: str, tel
         print(f"Paciente já existe: {nome} ({telefone}) -> id {row[0]}")
         return int(row[0])
 
-    # 2) Cria novo e captura ID gerado
     id_var = c_create.var(int)
     c_create.execute(
         "INSERT INTO hs_paciente (nome, nascimento, telefone, alta) "
@@ -44,7 +41,6 @@ def get_or_create_teleconsulta(
     """
     dt = parse_datetime_br(dt_str)
 
-    # 1) Tenta achar existente
     c_read.execute(
         "SELECT id FROM hs_teleconsulta "
         "WHERE paciente_id = :pid AND medico = :m AND data_hora = :dt",
@@ -55,7 +51,6 @@ def get_or_create_teleconsulta(
         print(f"Teleconsulta já existe: pac={paciente_id} | {dt_str} | {medico} -> id {row[0]}")
         return int(row[0])
 
-    # 2) Cria novo
     c_create.execute(
         "INSERT INTO hs_teleconsulta "
         "(paciente_id, medico, data_hora, diagnostico, urgencia, elegivel_online, status, plano) "
@@ -65,7 +60,6 @@ def get_or_create_teleconsulta(
     )
     conn.commit()
 
-    # Recupera ID recém-criado (opção simples: MAX por chave natural; funciona no contexto de seed)
     c_read.execute(
         "SELECT id FROM hs_teleconsulta "
         "WHERE paciente_id = :pid AND medico = :m AND data_hora = :dt",
@@ -103,7 +97,6 @@ def main():
         # Teleconsultas (seed)
         # -------------------------
         teleconsultas_seed = [
-            # (paciente_idx, medico, data_hora BR, diagnostico, urgencia, elegivel_online, status, plano)
             (0, "Dr. Marcos", "30/10/2025 14:30", "Dor lombar crônica",  "media", "S", "agendada",  "Exercícios leves"),
             (1, "Dra. Livia", "31/10/2025 09:00", "Reabilitação joelho", "alta",  "N", "agendada",  "Fortalecimento quadríceps"),
             (2, "Dr. Paulo",  "01/11/2025 10:00", "Ombro doloroso",      "baixa", "S", "agendada",  ""),

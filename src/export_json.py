@@ -1,4 +1,3 @@
-# src/export_json.py
 import os
 import json
 

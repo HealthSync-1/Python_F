@@ -1,4 +1,3 @@
-# src/hs_app.py
 import os
 from datetime import datetime
 from utils import get_credentials, parse_date_br, parse_datetime_br, yn_to_char, char_to_bool
@@ -24,7 +23,7 @@ def cadastrar_paciente(cC, conn):
             print("Campos obrigatórios não preenchidos.")
             pause(); return
 
-        nasc = parse_date_br(nasc_str)  # datetime
+        nasc = parse_date_br(nasc_str) 
         sql = "INSERT INTO hs_paciente (nome, nascimento, telefone, alta) VALUES (:n, :d, :t, 'N')"
         cC.execute(sql, n=nome, d=nasc, t=tel)
         conn.commit()

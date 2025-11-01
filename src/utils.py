@@ -1,4 +1,3 @@
-# src/utils.py
 import os
 from datetime import datetime
 from dotenv import load_dotenv
@@ -14,7 +13,6 @@ def get_credentials():
         pass_ = input("Digite sua senha Oracle: ")
     return user_, pass_
 
-# Helpers de data
 FMT_DATE = "%d/%m/%Y"
 FMT_DATETIME = "%d/%m/%Y %H:%M"
 

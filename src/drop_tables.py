@@ -1,4 +1,3 @@
-# src/drop_tables.py
 from utils import get_credentials
 from connection_functions import CRUD_Connect
 
